@@ -1,0 +1,130 @@
+.dashboard { display: flex; flex-direction: column; gap: 24px; }
+
+.dash-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Balance Hero */
+.balance-hero {
+  background: linear-gradient(135deg, #0f1a2e 0%, #111318 100%);
+  border-color: rgba(79,142,247,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.balance-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(79,142,247,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bh-label { font-size: 0.85rem; color: var(--text-2); font-weight: 500; }
+.bh-amount { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text); }
+.bh-accounts { font-size: 0.85rem; color: var(--text-3); }
+.bh-actions { display: flex; gap: 12px; margin-top: 8px; }
+
+/* Account Cards */
+.accounts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.acc-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.acc-card:hover { border-color: var(--border-hl); transform: translateY(-2px); }
+.acc-card.acc-active { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(79,142,247,0.2); }
+.acc-top { align-items: center; display: flex; justify-content: space-between; }
+.acc-num { color: var(--text-3); font-size: 0.78rem; }
+.acc-balance { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.acc-since { color: var(--text-3); font-size: 0.8rem; }
+
+/* Transactions */
+.section-header { align-items: center; display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.txn-list { display: flex; flex-direction: column; gap: 2px; }
+.txn-row {
+  align-items: center;
+  border-radius: var(--radius-sm);
+  display: flex;
+  gap: 14px;
+  padding: 12px 8px;
+  transition: background 0.15s;
+}
+.txn-row:hover { background: var(--bg-input); }
+.txn-icon {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+  flex-shrink: 0;
+}
+.txn-in  { background: rgba(34,199,122,0.12); color: var(--green); }
+.txn-out { background: rgba(247,79,107,0.12); color: var(--red); }
+.txn-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.txn-label { font-size: 0.9rem; font-weight: 500; }
+.txn-desc  { color: var(--text-3); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.txn-right { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; }
+.txn-amount { font-size: 0.95rem; font-weight: 600; font-family: 'DM Mono', monospace; }
+.txn-date   { color: var(--text-3); font-size: 0.78rem; }
+
+/* Empty State */
+.empty-state { align-items: center; display: flex; flex-direction: column; gap: 12px; padding: 48px; text-align: center; }
+.empty-icon  { font-size: 3rem; }
+
+/* Modal */
+.modal-overlay {
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 200;
+}
+.modal-box { max-width: 440px; width: 100%; }
+
+/* ── Charts grid ─────────────────────────────────────────────────────────── */
+.dash-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.chart-card { padding: 18px 20px; }
+.chart-wide { grid-column: 1 / -1; }
+@media (max-width: 800px) {
+  .dash-charts { grid-template-columns: 1fr; }
+}
+
+/* ── Live indicator ──────────────────────────────────────────────────────── */
+.live-dot {
+  background: rgba(34,199,122,0.15);
+  border: 1px solid rgba(34,199,122,0.35);
+  border-radius: 999px;
+  color: var(--green);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-left: 12px;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  animation: livePulse 1.5s ease-out;
+}
+@keyframes livePulse {
+  0%   { transform: scale(0.8); opacity: 0; }
+  20%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
