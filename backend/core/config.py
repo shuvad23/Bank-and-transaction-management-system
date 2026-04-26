@@ -20,6 +20,7 @@ class Settings(BaseSettings):
         "http://localhost:5000",
         "http://localhost:3000",
         "https://nexbank4.netlify.app/",
+        "https://nexbank-4b.vercel.app/",
     ]
 
     @property
