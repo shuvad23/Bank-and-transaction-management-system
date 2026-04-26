@@ -1,0 +1,93 @@
+# Netlify Configuration File
+# Place this in your frontend/ directory
+
+[build]
+  # Command to build the site (Vite)
+  command = "npm run build"
+  
+  # Directory to deploy
+  publish = "dist"
+  
+  # Node.js version
+  node_version = "18.17.0"
+
+# =========================
+# Environment Variables
+# =========================
+[env]
+
+  [env.production]
+    VITE_API_URL = "https://bank-and-transaction-management-system.onrender.com"
+    VITE_WS_URL  = "wss://bank-and-transaction-management-system.onrender.com"
+
+  [env.preview]
+    VITE_API_URL = "https://bank-and-transaction-management-system.onrender.com"
+    VITE_WS_URL  = "wss://bank-and-transaction-management-system.onrender.com"
+
+  [env.development]
+    VITE_API_URL = "http://localhost:8000"
+    VITE_WS_URL  = "ws://localhost:8000"
+
+# =========================
+# SPA Routing (IMPORTANT)
+# =========================
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# =========================
+# Optional API Proxy
+# (Uncomment if you want cleaner API calls like /api/*)
+# =========================
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://bank-and-transaction-management-system.onrender.com/api/:splat"
+#   status = 200
+#   force = true
+
+# =========================
+# Security Headers
+# =========================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# =========================
+# Cache Static Assets (FAST)
+# =========================
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# =========================
+# Do NOT Cache HTML
+# =========================
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# =========================
+# Context Settings
+# =========================
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+[context.preview]
+  command = "npm run build"
+  publish = "dist"
+
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "dist"
+
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "dist"
