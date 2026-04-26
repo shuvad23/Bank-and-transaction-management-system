@@ -60,7 +60,7 @@ async def list_logs(limit: int = 100, skip: int = 0, severity: Optional[str] = N
         items = list(db.get("audit_logs", []))
         if severity:
             items = [e for e in items if e.get("severity") == severity]
-        items = sorted(items, key=lambda e: e["created_at"], reverse=True)[skip:skip + limit]
+        items = sorted(items, key=lambda e: e.get("created_at", datetime.min), reverse=True)[skip:skip + limit]
     else:
         query = {"severity": severity} if severity else {}
         cursor = db.audit_logs.find(query).sort("created_at", -1).skip(skip).limit(limit)
@@ -76,6 +76,6 @@ async def list_logs(limit: int = 100, skip: int = 0, severity: Optional[str] = N
             "details": e.get("details", {}),
             "severity": e.get("severity", "info"),
             "ip_address": e.get("ip_address"),
-            "created_at": e["created_at"],
+            "created_at": e.get("created_at"),
         })
     return out

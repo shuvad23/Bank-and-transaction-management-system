@@ -1,0 +1,12 @@
+[32mINFO[0m:     Started server process [[36m689[0m]
+[32mINFO[0m:     Waiting for application startup.
+Connecting to MongoDB...
+Connected to MongoDB successfully!
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     172.31.104.98:39926 - "[1mGET / HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+MongoDB connection closed.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m689[0m]

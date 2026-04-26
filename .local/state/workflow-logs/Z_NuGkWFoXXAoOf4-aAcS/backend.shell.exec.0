@@ -1,0 +1,343 @@
+[32mINFO[0m:     Started server process [[36m1447[0m]
+[32mINFO[0m:     Waiting for application startup.
+Connecting to MongoDB...
+Connected to MongoDB successfully!
+Cache: using in-memory backend (no REDIS_URL configured)
+[32mINFO[0m:     Application startup complete.
+[32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:8000[0m (Press CTRL+C to quit)
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+
+┌─ EMAIL (dev log) ────────────────────────────────────────────────
+│ To:      demo@nexbank.io
+│ Subject: Welcome to NexBank!
+│────────────────────────────────────────────────────────────────────
+│ Hi Demo User,
+│ 
+│ Your NexBank account is ready. You can now log in and open your first bank account.
+│ 
+│ — NexBank
+└─────────────────────────────────────────────────────────────────────────
+
+[32mINFO[0m:     127.0.0.1:60924 - "[1mPOST /api/auth/register HTTP/1.1[0m" [32m201 Created[0m
+[32mINFO[0m:     127.0.0.1:48108 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48124 - "[1mPOST /api/accounts/ HTTP/1.1[0m" [32m201 Created[0m
+[32mINFO[0m:     127.0.0.1:48134 - "[1mPOST /api/accounts/ HTTP/1.1[0m" [32m201 Created[0m
+[32mINFO[0m:     127.0.0.1:48148 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48150 - "[1mPOST /api/accounts/BNK760974780/deposit HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48162 - "[1mPOST /api/accounts/BNK760974780/withdraw HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48174 - "[1mPOST /api/accounts/BNK760974780/withdraw HTTP/1.1[0m" [31m400 Bad Request[0m
+[32mINFO[0m:     127.0.0.1:48186 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48202 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48210 - "[1mGET /api/notifications/?limit=10 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48220 - "[1mGET /api/admin/audit-logs?limit=10 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40018 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40030 - "[1mPOST /api/accounts/BNK760974780/deposit HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40038 - "[1mPOST /api/accounts/BNK760974780/withdraw HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40040 - "[1mPOST /api/accounts/BNK760974780/transfer HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40044 - "[1mPOST /api/accounts/BNK760974780/withdraw HTTP/1.1[0m" [31m403 Forbidden[0m
+[32mINFO[0m:     127.0.0.1:40056 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40058 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mPOST /api/accounts/BNK968110587/deposit HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK968110587/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK937559702/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150&severity=info HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150&severity=warning HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150&severity=critical HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/notifications/mark-read HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.17:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK989517330/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=10&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/BNK760974780/transactions?limit=100&skip=0 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/stats HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/connections HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/charts?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/users?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.22:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/transactions?limit=100 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.6.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/admin/audit-logs?limit=150 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     172.31.104.98:35760 - "[1mGET /register HTTP/1.1[0m" [31m404 Not Found[0m
+[32mINFO[0m:     172.31.104.98:35760 - "[1mGET /favicon.ico HTTP/1.1[0m" [31m404 Not Found[0m
+
+┌─ EMAIL (dev log) ────────────────────────────────────────────────
+│ To:      niloydas.526987@gmail.com
+│ Subject: Welcome to NexBank!
+│────────────────────────────────────────────────────────────────────
+│ Hi Niloy Kumar Das,
+│ 
+│ Your NexBank account is ready. You can now log in and open your first bank account.
+│ 
+│ — NexBank
+└─────────────────────────────────────────────────────────────────────────
+
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/auth/register HTTP/1.1[0m" [32m201 Created[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/auth/login HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.25:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mPOST /api/notifications/mark-read HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.25:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.25:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.25:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.25:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/accounts/ HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.5.19:0 - "[1mGET /api/notifications/?limit=30 HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     10.84.3.27:0 - "[1mGET /api/charts/me?days=7 HTTP/1.1[0m" [32m200 OK[0m
