@@ -1,9 +1,9 @@
 # 🏦 NexBank — Bank & Transaction Management System
 ### Complete Setup, Development & Deployment Guide
 
-frontend server deployed on: https://nexbank-4b.vercel.app
-backend server deployed on : https://bank-and-transaction-management-system.onrender.com
-Main project are deployed on Replit: https://nex-bank-4-b-nu-bzip--niloydas526987.replit.app/
+- frontend server deployed on: https://nexbank-4b.vercel.app
+- backend server deployed on : https://bank-and-transaction-management-system.onrender.com
+- Main project are deployed on Replit: https://nex-bank-4-b-nu-bzip--niloydas526987.replit.app/
 ---
 
 ## 📁 Project Structure
